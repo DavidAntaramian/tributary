@@ -1,0 +1,43 @@
+defmodule Tributary.Mixfile do
+  use Mix.Project
+
+  @version "0.0.1"
+  @source_url "https://github.com/davidantaramian/tributary"
+
+  def project do
+    [app: :tributary,
+     elixir: "~> 1.0",
+     build_embedded: Mix.env == :prod,
+     start_permanent: Mix.env == :prod,
+     deps: deps,
+     package: package
+     name: "Tributary for Ecto",
+     docs: [source_ref: "v#{@version}", main: "Tributary"],
+     source_url: @source_url,
+     homepage_url: @source_url,
+     description: """
+     A simple stream generation library for Ecto queries that facilitates 
+     more efficient paging of queries both in the database and in your
+     Ecto-reliant applicaton.
+     """
+   ]
+  end
+
+  def application do
+    [applications: [:logger, :ecto]]
+  end
+
+  defp deps do
+    [{:ecto, "~> 1.1"},
+     {:earmark, "~> 0.1", only: [:dev, :docs]},
+     {:ex_doc, "~> 0.10", only: [:dev, :docs]},
+    ]
+  end
+
+  defp package do
+    [maintainers: ["David Antaramian"],
+     licences: ["MIT"],
+     links: %{github: @source_url},
+     files: ~w(lib mix.exs README.MD LICENCSE.MD)
+    ]
+end
