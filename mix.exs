@@ -10,8 +10,9 @@ defmodule Tributary.Mixfile do
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps,
-     package: package
+     package: package,
      name: "Tributary for Ecto",
+     version: @version,
      docs: [source_ref: "v#{@version}", main: "Tributary"],
      source_url: @source_url,
      homepage_url: @source_url,
@@ -36,8 +37,9 @@ defmodule Tributary.Mixfile do
 
   defp package do
     [maintainers: ["David Antaramian"],
-     licences: ["MIT"],
+     licenses: ["MIT"],
      links: %{github: @source_url},
      files: ~w(lib mix.exs README.MD LICENCSE.MD)
     ]
+  end
 end
