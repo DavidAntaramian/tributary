@@ -106,5 +106,5 @@ Future Tasks
 License
 ------
 
-Tributary is issued under the MIT License. See the `LICENSE` file.
+Tributary is issued under the MIT License. See the `LICENSE.md` file.
 

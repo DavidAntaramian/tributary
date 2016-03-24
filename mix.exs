@@ -39,7 +39,7 @@ defmodule Tributary.Mixfile do
     [maintainers: ["David Antaramian"],
      licenses: ["MIT"],
      links: %{github: @source_url},
-     files: ~w(lib mix.exs README.MD LICENCSE.MD)
+     files: ~w(lib mix.exs README.md LICENSE.md)
     ]
   end
 end
