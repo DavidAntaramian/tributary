@@ -16,16 +16,10 @@ defmodule Tributary do
               |> Ecto.Query.limit(^chunk_size) 
               |> __ENV__.module.all
 
-            cond do
-              Enum.count(results) > 0 ->
-                last_key = results
-                  |> Enum.reverse
-                  |> Enum.at(0)
-                  |> Map.get(key_name)
-                
+            case List.last(results) do
+              %{^key_name => last_key} ->
                 {results, {query, last_key}}
-
-              :otherwise ->
+              nil ->
                 {:halt, {query, last_seen_key}}
             end
           end,
