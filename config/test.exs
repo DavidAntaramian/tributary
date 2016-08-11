@@ -5,8 +5,7 @@ config :tributary, ecto_repos: [Tributary.Repo]
 config :tributary, Tributary.Repo,
   adapter: Ecto.Adapters.Postgres,
   pool: Ecto.Adapters.SQL.Sandbox,
-  database: "tributary_test",
-  username: System.get_env("TRIBUTARY_DB_USER") || System.get_env("USER")
+  url: System.get_env("DATABASE_URL")
 
 config :logger, :console,
   level: :error

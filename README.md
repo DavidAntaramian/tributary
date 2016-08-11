@@ -1,6 +1,8 @@
 Tributary
 =========
 
+[![CircleCI Build Status](https://img.shields.io/circleci/project/DavidAntaramian/tributary/master.svg?maxAge=86400)](https://circleci.com/gh/DavidAntaramian/tributary)
+
 Tributary is a helpful little plugin that pages your Ecto query for efficient
 processing without any concern on your part for state management. It does
 this by taking advantage of the [Elixir Stream](http://elixir-lang.org/docs/stable/elixir/Stream.html)
