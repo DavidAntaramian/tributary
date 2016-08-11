@@ -7,8 +7,8 @@ machine:
 dependencies:
   pre:
     - if ! asdf | grep version; then git clone https://github.com/asdf-vm/asdf.git ~/.asdf; fi
-    - asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
-    - asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+    - asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git || true
+    - asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git || true
     - asdf install
     - mix local.hex --force
     - mix local.rebar --force
