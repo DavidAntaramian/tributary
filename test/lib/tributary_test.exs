@@ -31,4 +31,15 @@ defmodule TributaryTest do
     assert ["Widget 1", "Widget 2", "Widget 3" | _] = names
     assert List.last(names) == "Widget 100"
   end
+
+  test "stream with database options" do
+    create_widgets!(100)
+
+    stream = Repo.stream(Widget, chunk_size: 20, timeout: 20_000)
+    assert Enum.count(stream) == 100
+
+    names = Enum.map(stream, fn %{name: name} -> name end)
+    assert ["Widget 1", "Widget 2", "Widget 3" | _] = names
+    assert List.last(names) == "Widget 100"
+  end
 end
