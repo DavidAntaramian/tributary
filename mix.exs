@@ -1,7 +1,7 @@
 defmodule Tributary.Mixfile do
   use Mix.Project
 
-  @version "0.0.2"
+  @version "0.1.0"
   @source_url "https://github.com/davidantaramian/tributary"
 
   def project do
