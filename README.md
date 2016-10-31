@@ -78,7 +78,7 @@ the last seen key it is paging by.
 For more resources on keyset pagination and why it is so important,
 see the following posts:
 
-  * ["Pagination Done the PostgreSQL Way"](http://leopard.in.ua/2014/10/11/postgresql/paginattion) by Alexey Vasiliev
+  * ["Pagination Done the PostgreSQL Way"](http://leopard.in.ua/2014/10/11/postgresql-paginattion) by Alexey Vasiliev
   * ["We need tool support for keyset pagination"](http://use-the-index-luke.com/no-offset) by Markus Winand
 
 Helpful Answers
