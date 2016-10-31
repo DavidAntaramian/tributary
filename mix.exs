@@ -36,7 +36,7 @@ defmodule Tributary.Mixfile do
     [{:ecto, "~> 2.0"},
      {:earmark, "~> 0.1", only: [:dev, :docs]},
      {:ex_doc, "~> 0.10", only: [:dev, :docs]},
-     {:postgrex, "~> 0.12", optional: true}
+     {:postgrex, "~> 0.12", only: [:test]}
     ]
   end
 
