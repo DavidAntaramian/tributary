@@ -102,8 +102,37 @@ only the necessary data in the background.
 Future Tasks
 ------------
 
-[] Support using mutli-column indexes
-[] Add unit tests
+- [ ] Support using mutli-column indexes
+
+Testing
+-------
+
+To test Tributary, you will need to have Postgres installed and create a
+testing database. You'll also need a test environment secrets file,
+which you can create at `config/test.secret.exs`—this is already ignored
+by git.
+
+The most basic form looks something like this:
+
+```elixir
+use Mix.Config
+
+config :tributary, Tributary.Repo,
+  url: "postgres://localhost/tributary"
+```
+
+You may need to tweak the URL parameters. Or you can use the
+other provided [Ecto Postgres adapter
+options](https://hexdocs.pm/ecto/2.0.5/Ecto.Adapters.Postgres.html).
+
+You will need to run `mix ecto.migrate` with the environment variable
+`MIX_ENV` set to `test`:
+
+```bash
+MIX_ENV=test mix ecto.migrate
+```
+
+You should now be able to run `mix test`.
 
 License
 ------
